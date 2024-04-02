@@ -3,12 +3,12 @@ import 'http.dart';
 import 'uaid.dart';
 
 class MAV {
-  final MavHTTP _http = MavHTTP(uaid: generateUAID());
+  MavHTTP _http = MavHTTP(uaid: generateUAID());
 
   String? _email;
   String? _token;
 
-  Future<void> login(email, password) async {
+  Future<void> login(String email, String password) async {
     final resp = await _http.post(
       MobileEndpoints.login,
       data: {
@@ -20,5 +20,7 @@ class MAV {
 
     _email = email;
     _token = resp.data["Token"];
+
+    _http = MavHTTP(uaid: generateUAID(), email: _email, token: _token);
   }
 }
