@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:uuid/uuid.dart';
 import 'dart:typed_data';
 
+/// Generates a UAID. This was ported from the original Java code.
 String generateUAID() {
   String part1 = _part1();
   String part2 = _part2(part1);
