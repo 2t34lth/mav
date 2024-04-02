@@ -12,8 +12,7 @@ _$TicketDataImpl _$$TicketDataImplFromJson(Map<String, dynamic> json) =>
       passengerBirthDate: json['SzuletesiDatum'] as int?,
       ticketId: json['Jegysorszam'] as String?,
       documentId: json['BizonylatAzonosito'] as String?,
-      tickets:
-          (json['Jegyek'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      tickets: json['Jegyek'] as List<dynamic>?,
     );
 
 Map<String, dynamic> _$$TicketDataImplToJson(_$TicketDataImpl instance) =>

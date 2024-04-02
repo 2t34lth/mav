@@ -27,9 +27,10 @@ mixin _$TicketData {
   @JsonKey(name: "Jegysorszam")
   String? get ticketId => throw _privateConstructorUsedError;
   @JsonKey(name: "BizonylatAzonosito")
-  String? get documentId => throw _privateConstructorUsedError;
+  String? get documentId =>
+      throw _privateConstructorUsedError; // TODO: implement actual ticket list type
   @JsonKey(name: "Jegyek")
-  List<String>? get tickets => throw _privateConstructorUsedError;
+  List<dynamic>? get tickets => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -48,7 +49,7 @@ abstract class $TicketDataCopyWith<$Res> {
       @JsonKey(name: "SzuletesiDatum") int? passengerBirthDate,
       @JsonKey(name: "Jegysorszam") String? ticketId,
       @JsonKey(name: "BizonylatAzonosito") String? documentId,
-      @JsonKey(name: "Jegyek") List<String>? tickets});
+      @JsonKey(name: "Jegyek") List<dynamic>? tickets});
 }
 
 /// @nodoc
@@ -90,7 +91,7 @@ class _$TicketDataCopyWithImpl<$Res, $Val extends TicketData>
       tickets: freezed == tickets
           ? _value.tickets
           : tickets // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<dynamic>?,
     ) as $Val);
   }
 }
@@ -108,7 +109,7 @@ abstract class _$$TicketDataImplCopyWith<$Res>
       @JsonKey(name: "SzuletesiDatum") int? passengerBirthDate,
       @JsonKey(name: "Jegysorszam") String? ticketId,
       @JsonKey(name: "BizonylatAzonosito") String? documentId,
-      @JsonKey(name: "Jegyek") List<String>? tickets});
+      @JsonKey(name: "Jegyek") List<dynamic>? tickets});
 }
 
 /// @nodoc
@@ -148,7 +149,7 @@ class __$$TicketDataImplCopyWithImpl<$Res>
       tickets: freezed == tickets
           ? _value._tickets
           : tickets // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<dynamic>?,
     ));
   }
 }
@@ -161,7 +162,7 @@ class _$TicketDataImpl implements _TicketData {
       @JsonKey(name: "SzuletesiDatum") this.passengerBirthDate,
       @JsonKey(name: "Jegysorszam") this.ticketId,
       @JsonKey(name: "BizonylatAzonosito") this.documentId,
-      @JsonKey(name: "Jegyek") final List<String>? tickets})
+      @JsonKey(name: "Jegyek") final List<dynamic>? tickets})
       : _tickets = tickets;
 
   factory _$TicketDataImpl.fromJson(Map<String, dynamic> json) =>
@@ -179,10 +180,12 @@ class _$TicketDataImpl implements _TicketData {
   @override
   @JsonKey(name: "BizonylatAzonosito")
   final String? documentId;
-  final List<String>? _tickets;
+// TODO: implement actual ticket list type
+  final List<dynamic>? _tickets;
+// TODO: implement actual ticket list type
   @override
   @JsonKey(name: "Jegyek")
-  List<String>? get tickets {
+  List<dynamic>? get tickets {
     final value = _tickets;
     if (value == null) return null;
     if (_tickets is EqualUnmodifiableListView) return _tickets;
@@ -237,11 +240,12 @@ class _$TicketDataImpl implements _TicketData {
 
 abstract class _TicketData implements TicketData {
   const factory _TicketData(
-      {@JsonKey(name: "UtasNeve") final String? passengerName,
-      @JsonKey(name: "SzuletesiDatum") final int? passengerBirthDate,
-      @JsonKey(name: "Jegysorszam") final String? ticketId,
-      @JsonKey(name: "BizonylatAzonosito") final String? documentId,
-      @JsonKey(name: "Jegyek") final List<String>? tickets}) = _$TicketDataImpl;
+          {@JsonKey(name: "UtasNeve") final String? passengerName,
+          @JsonKey(name: "SzuletesiDatum") final int? passengerBirthDate,
+          @JsonKey(name: "Jegysorszam") final String? ticketId,
+          @JsonKey(name: "BizonylatAzonosito") final String? documentId,
+          @JsonKey(name: "Jegyek") final List<dynamic>? tickets}) =
+      _$TicketDataImpl;
 
   factory _TicketData.fromJson(Map<String, dynamic> json) =
       _$TicketDataImpl.fromJson;
@@ -258,9 +262,9 @@ abstract class _TicketData implements TicketData {
   @override
   @JsonKey(name: "BizonylatAzonosito")
   String? get documentId;
-  @override
+  @override // TODO: implement actual ticket list type
   @JsonKey(name: "Jegyek")
-  List<String>? get tickets;
+  List<dynamic>? get tickets;
   @override
   @JsonKey(ignore: true)
   _$$TicketDataImplCopyWith<_$TicketDataImpl> get copyWith =>
